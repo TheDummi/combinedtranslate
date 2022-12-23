@@ -1,6 +1,6 @@
 {
 	"name": "combinedtranslate",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A translate package that combines multiple API's and packages.",
 	"main": "dist/main.js",
 	"scripts": {
@@ -32,8 +32,6 @@
 		"google-translate-api-next": "^0.1.0",
 		"google-translate-api-x": "^10.5.0",
 		"google-translate-open-api": "^1.3.7",
-		"googletrans": "^1.0.4",
-		"granslate": "^2.2.3",
 		"trgoogleapi": "^1.5.1"
 	}
 }

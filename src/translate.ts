@@ -8,9 +8,7 @@ import gtae from "google-translate-api-extend";
 import gtan from "google-translate-api-next";
 import gtax from "google-translate-api-x";
 import gtoa from "google-translate-open-api";
-import gotr from "googletrans";
 import trga from "trgoogleapi";
-
 import * as main from "./main.js";
 
 interface Options {
@@ -51,7 +49,6 @@ export default async function translate(text: string, options: Options = {}) {
 				} catch { }
 			}
 			if (translated?.text) {
-				// console.log(translated)
 				response = translated;
 
 				break;
@@ -66,7 +63,7 @@ export default async function translate(text: string, options: Options = {}) {
 		else continue;
 	}
 
-	for (const translator of [leiz, gtax, gtoa, gotr, trga]) {
+	for (const translator of [leiz, gtax, gtoa, trga]) {
 		for (const to of target) {
 			if (!to) break;
 

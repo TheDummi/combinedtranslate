@@ -28,7 +28,7 @@ const translation = await translate("Hallo Wereld", { to: "English" });
   content: string, // The content of the translation
   pronunciation: string | null, // If applied, it'll provide a phonetic script.
   translated: boolean,
-  tries:number, // Number of times it switched API's.
+  tries: number, // Number of times it switched API's to get the current response.
   language: {
     source: { // The language translating from
         name: string | null, // The name of the language (null when not provided.)

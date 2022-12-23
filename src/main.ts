@@ -4,7 +4,6 @@ import * as iuse from "@iuser/google-translate-api";
 import * as plai from "@plainheart/google-translate-api";
 import * as gtae from "google-translate-api-extend";
 import * as gtan from "google-translate-api-next";
-
 import translate from "./translate.js";
 
 function getLanguages() {
