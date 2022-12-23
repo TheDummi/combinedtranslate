@@ -16,8 +16,14 @@ import * as main from "./main.js";
 interface Options {
 	to?: string;
 	from?: string | null;
+	logOnFail?: boolean;
 }
-
+/**
+ * 
+ * @param {string} text - A string value with any characters up to 5000 at once 
+ * @param {Options} options - A set of optional options 
+ * @returns an object containing translation, source and target language and much more.
+ */
 export default async function translate(text: string, options: Options = {}) {
 	if (!options.to) options.to = "English";
 	const target = getCredentials(options.to);
@@ -26,7 +32,7 @@ export default async function translate(text: string, options: Options = {}) {
 	let response,
 		tries = 0;
 
-	for (const translate of [asma, imli, iuse, gtae, gtan, plai]) {
+	for (const translate of [asma, gtan, iuse, imli, gtae, plai]) {
 		for (const to of target) {
 			if (!to) break;
 
@@ -35,22 +41,23 @@ export default async function translate(text: string, options: Options = {}) {
 			if (!from[0] && !from[1]) {
 				try {
 					translated = await translate(text, { to });
-				} catch {}
+				} catch { }
 			} else {
 				try {
 					translated = await translate(text, {
 						to,
 						from: from[target.indexOf(to)] as string,
 					});
-				} catch {}
+				} catch { }
 			}
 			if (translated?.text) {
+				// console.log(translated)
 				response = translated;
 
 				break;
 			} else {
 				tries++;
-				console.log(`[${tries}] Failed to translate with "${to}".`);
+				if (options.logOnFail) console.log(`[${tries}] Failed to translate with "${to}".`);
 				continue;
 			}
 		}
@@ -68,7 +75,7 @@ export default async function translate(text: string, options: Options = {}) {
 			if (!from[0] && !from[1]) {
 				try {
 					translated = await translator.default(text, { to });
-				} catch {}
+				} catch { }
 			} else {
 				translated = await translator.default(text, {
 					to,
@@ -81,7 +88,7 @@ export default async function translate(text: string, options: Options = {}) {
 				break;
 			} else {
 				tries++;
-				console.log(`[${tries}] Failed to translate with "${to}".`);
+				if (options.logOnFail) console.log(`[${tries}] Failed to translate with "${to}".`);
 				continue;
 			}
 		}
@@ -98,7 +105,7 @@ export default async function translate(text: string, options: Options = {}) {
 		if (!from[0] && !from[1]) {
 			try {
 				translated = await vita.translate(text, { to });
-			} catch {}
+			} catch { }
 		} else {
 			translated = await vita.translate(text, {
 				to,
@@ -111,7 +118,7 @@ export default async function translate(text: string, options: Options = {}) {
 			break;
 		} else {
 			tries++;
-			console.log(`[${tries}] Failed to translate with "${to}".`);
+			if (options.logOnFail) console.log(`[${tries}] Failed to translate with "${to}".`);
 			continue;
 		}
 	}
@@ -120,6 +127,7 @@ export default async function translate(text: string, options: Options = {}) {
 		content: response?.text || text,
 		pronunciation: response?.pronunciation || null,
 		translated: !!response?.text,
+		tries: tries,
 		language: {
 			source: {
 				name: main.languagesByCode[response?.from?.language?.iso || ""] || null,
@@ -139,7 +147,7 @@ export default async function translate(text: string, options: Options = {}) {
 			value: response?.from?.text?.value || null,
 		},
 		raw: response?.raw || null,
-	};
+	} as const;
 }
 
 function getCredentials(language: string | null) {
@@ -148,18 +156,17 @@ function getCredentials(language: string | null) {
 	if (language)
 		code =
 			main.languagesByName[
-				(language =
-					language.charAt(0).toUpperCase() + language.slice(1).toLowerCase())
+			(language =
+				language.charAt(0).toUpperCase() + language.slice(1).toLowerCase())
 			];
 
 	if (language)
 		name =
 			main.languagesByCode[
-				`${language.split(/-/g)[0].toLowerCase()}${
-					language.split(/-/g)[1]
-						? `-${language.split(/-/g)[1].toUpperCase()}`
-						: ""
-				}`
+			`${language.split(/-/g)[0].toLowerCase()}${language.split(/-/g)[1]
+				? `-${language.split(/-/g)[1].toUpperCase()}`
+				: ""
+			}`
 			];
 
 	if (!code && name) code = main.languagesByName[name];

@@ -1,24 +1,19 @@
 import * as asma from "@asmagin/google-translate-api";
 import * as imli from "@imlinhanchao/google-translate-api";
 import * as iuse from "@iuser/google-translate-api";
-import * as leiz from "@leizl/google-translate-open-api";
 import * as plai from "@plainheart/google-translate-api";
-import * as vita from "@vitalets/google-translate-api";
 import * as gtae from "google-translate-api-extend";
 import * as gtan from "google-translate-api-next";
-import * as gtax from "google-translate-api-x";
-import * as gtoa from "google-translate-open-api";
-import * as gotr from "googletrans";
-import * as trga from "trgoogleapi";
-import translate from "./Translate.js";
+
+import translate from "./translate.js";
 
 function getLanguages() {
 	const languagesByCode: Record<string, string> = {
-			zh: "Chinese",
-			"zh-cn": "Chinese Simplified",
-			"zh-tw": "Chinese Traditional",
-			ma: "Mandarin",
-		},
+		zh: "Chinese",
+		"zh-cn": "Chinese Simplified",
+		"zh-tw": "Chinese Traditional",
+		ma: "Mandarin",
+	},
 		languagesByName: Record<string, string> = {
 			Chinese: "zh",
 			"Chinese Simplified": "zh-cn",
@@ -43,7 +38,7 @@ function getLanguages() {
 					writable: false,
 					enumerable: true,
 				});
-			} catch {}
+			} catch { }
 
 			try {
 				Object.defineProperty(languagesByName, name, {
@@ -51,7 +46,7 @@ function getLanguages() {
 					writable: false,
 					enumerable: true,
 				});
-			} catch {}
+			} catch { }
 		});
 	});
 
