@@ -59,7 +59,22 @@ function getLanguages() {
 const languagesByCode = getLanguages().languagesByCode,
 	languagesByName = getLanguages().languagesByName,
 	languagesList = getLanguages().languages;
+/**
+ * @param {string} language - The name of the language
+ */
+function getLanguageByName(language: string) {
+	return languagesByName[(language.charAt(0).toUpperCase() + language.slice(1).toLowerCase())] || null;
+}
 
-export { languagesByCode, languagesByName, languagesList, translate };
+function getLanguageByCode(code: string) {
+	return languagesByCode[
+		`${code.split(/-/g)[0].toLowerCase()}${code.split(/-/g)[1]
+			? `-${code.split(/-/g)[1].toUpperCase()}`
+			: ""
+		}`
+	] || null;
+}
+
+export { languagesByCode, languagesByName, languagesList, translate, getLanguageByCode, getLanguageByName };
 
 export default translate;

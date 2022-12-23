@@ -152,10 +152,7 @@ function getCredentials(language: string | null) {
 
 	if (language)
 		code =
-			main.languagesByName[
-			(language =
-				language.charAt(0).toUpperCase() + language.slice(1).toLowerCase())
-			];
+			main.languagesByName[language.charAt(0).toUpperCase() + language.slice(1).toLowerCase()];
 
 	if (language)
 		name =
