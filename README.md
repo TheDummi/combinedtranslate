@@ -15,9 +15,9 @@ npm i combinedtranslate
 Using the package is very easy.
 
 ```js
-import translate from "combinedtranslate";
+import translate from 'combinedtranslate';
 
-const translation = await translate("Hallo Wereld", { to: "English" });
+const translation = await translate('Hallo Wereld', { to: 'English' });
 // Output: translation.content = 'Hello World'
 ```
 
@@ -27,8 +27,9 @@ const translation = await translate("Hallo Wereld", { to: "English" });
 {
   content: string, // The content of the translation
   pronunciation: string | null, // If applied, it'll provide a phonetic script.
-  translated: boolean,
+  translated: boolean, // Whether it translated or not.
   tries: number, // Number of times it switched API's to get the current response.
+  time: number // The amount of milliseconds it took to translate the given string.
   language: {
     source: { // The language translating from
         name: string | null, // The name of the language (null when not provided.)
@@ -45,7 +46,7 @@ const translation = await translate("Hallo Wereld", { to: "English" });
     input: string, // The string given on input
     output: string, // The string returned as output or the content
     corrected: boolean, // Whether autocorrect was used on the string
-    value: null // No idea what this is...
+    value: null // The corrected value.
   },
   raw: {
     // The data without it being formatted nicely
@@ -64,11 +65,7 @@ const translation = await translate("Hallo Wereld", { to: "English" });
 ### Methods
 
 ```js
-import translate, {
-	languagesByCode,
-	languagesByName,
-	languageList,
-} from "combinedtranslate";
+import translate, { languagesByCode, languagesByName, languageList } from 'combinedtranslate';
 
 languagesByCode; // An object with all supported languages by their ISO code.
 

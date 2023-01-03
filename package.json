@@ -1,10 +1,10 @@
 {
 	"name": "combinedtranslate",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "A translate package that combines multiple API's and packages.",
 	"main": "dist/main.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dummi": "echo Hi!"
 	},
 	"repository": {
 		"type": "git",

@@ -1,3 +1,5 @@
+"use strict";
+
 import asma from "@asmagin/google-translate-api";
 import imli from "@imlinhanchao/google-translate-api";
 import iuse from "@iuser/google-translate-api";
@@ -9,7 +11,7 @@ import gtan from "google-translate-api-next";
 import gtax from "google-translate-api-x";
 import gtoa from "google-translate-open-api";
 import trga from "trgoogleapi";
-import * as main from "./main.js";
+import * as main from "../main.js";
 
 interface Options {
 	to?: string;
@@ -23,7 +25,12 @@ interface Options {
  * @returns an object containing translation, source and target language and much more.
  */
 export default async function translate(text: string, options: Options = {}) {
+	const start: number = Number(Date.now());
+
 	if (!options.to) options.to = "English";
+
+	if (typeof text !== "string") throw new Error("Can't translate non-string values.")
+
 	const target = getCredentials(options.to);
 	const from = getCredentials(options.from as string | null);
 
@@ -125,10 +132,11 @@ export default async function translate(text: string, options: Options = {}) {
 		pronunciation: response?.pronunciation || null,
 		translated: !!response?.text,
 		tries: tries,
+		time: Number(Date.now()) - start,
 		language: {
 			source: {
-				name: main.languagesByCode[response?.from?.language?.iso || ""] || null,
-				code: response?.from?.language?.iso || null,
+				name: main.languagesByCode[response?.from?.language?.iso || response?.raw?.src || ""] || null,
+				code: response?.from?.language?.iso || response?.raw?.src || null,
 			},
 			target: {
 				name: target[1],

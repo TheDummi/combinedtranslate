@@ -2,3 +2,4 @@ src
 package-lock.json
 .gitignore
 .gitattributes
+tsconfig.json
