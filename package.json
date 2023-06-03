@@ -1,37 +1,49 @@
 {
-	"name": "combinedtranslate",
-	"version": "0.0.5",
-	"description": "A translate package that combines multiple API's and packages.",
-	"main": "dist/main.js",
-	"scripts": {
-		"dummi": "echo Hi!"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/TheDummi/combinedTranslate.git"
-	},
-	"keywords": [
-		"translate",
-		"free"
-	],
-	"author": "Dummi",
-	"type": "module",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/TheDummi/combinedTranslate/issues"
-	},
-	"homepage": "https://github.com/TheDummi/combinedTranslate#readme",
-	"dependencies": {
-		"@asmagin/google-translate-api": "^8.0.2",
-		"@imlinhanchao/google-translate-api": "^8.0.1",
-		"@iuser/google-translate-api": "^0.0.2",
-		"@leizl/google-translate-open-api": "^0.0.2",
-		"@plainheart/google-translate-api": "^1.2.0",
-		"@vitalets/google-translate-api": "^9.0.0",
-		"google-translate-api-extend": "^8.0.1",
-		"google-translate-api-next": "^0.1.0",
-		"google-translate-api-x": "^10.5.0",
-		"google-translate-open-api": "^1.3.7",
-		"trgoogleapi": "^1.5.1"
-	}
+  "name": "combinedtranslate",
+  "version": "0.1.0",
+  "description": "A translate package that combines multiple API's and packages.",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc && npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDummi/combinedTranslate.git"
+  },
+  "keywords": [
+    "translate",
+    "free"
+  ],
+  "author": "Dummi",
+  "type": "module",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheDummi/combinedTranslate/issues"
+  },
+  "homepage": "https://github.com/TheDummi/combinedTranslate#readme",
+  "dependencies": {
+    "@asmagin/google-translate-api": "^8.0.2",
+    "@imlinhanchao/google-translate-api": "^8.0.1",
+    "@iuser/google-translate-api": "^0.0.2",
+    "@leizl/google-translate-open-api": "^0.0.2",
+    "@vitalets/google-translate-api": "^9.2.0",
+    "convert-units": "^2.3.4",
+    "fanyi-google": "^1.1.1",
+    "google-translate-api": "^0.1.1",
+    "google-translate-api-extend": "^8.0.1",
+    "google-translate-api-next": "^0.1.0",
+    "google-translate-api-x": "^10.6.7",
+    "moji-translate": "^1.0.8",
+    "morcedecoder": "^1.0.1",
+    "open-translate": "^1.4.2",
+    "pig-latin": "^2.0.2",
+    "translate-emoji": "^1.0.0",
+    "trgoogleapi": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/convert-units": "^2.3.5",
+    "@types/google-translate-api": "^2.3.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
 }

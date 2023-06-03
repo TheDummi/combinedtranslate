@@ -1,6 +1,4 @@
-"use strict";
-
-import getLanguages from "./getLanguages.js";
+import languages from "../tools/languages.js";
 
 /**
  * A function to get the language name by it's ISO code
@@ -8,12 +6,16 @@ import getLanguages from "./getLanguages.js";
  * @returns language name
  */
 export default function getLanguageByCode(code: string) {
-    if (typeof code !== "string") throw new Error("Can't find language by non-string values.")
+  if (typeof code !== "string")
+    throw new Error("Can't find language by non-string values.");
 
-    return getLanguages().languagesByCode[
-        `${code.split(/-/g)[0].toLowerCase()}${code.split(/-/g)[1]
-            ? `-${code.split(/-/g)[1].toUpperCase()}`
-            : ""
+  return (
+    languages.find(
+      (l) =>
+        l.code ==
+        `${code.split(/-/g)[0].toLowerCase()}${
+          code.split(/-/g)[1] ? `-${code.split(/-/g)[1].toLowerCase()}` : ""
         }`
-    ] || null;
+    ) || null
+  );
 }
