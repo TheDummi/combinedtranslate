@@ -1,6 +1,6 @@
 {
   "name": "combinedtranslate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A translate package that combines multiple API's and packages.",
   "main": "dist/main.js",
   "scripts": {
