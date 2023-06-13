@@ -6,8 +6,7 @@ import languages from "../tools/languages.js";
  * @returns language name
  */
 export default function getLanguageByCode(language: string) {
-  if (typeof language !== "string")
-    throw new Error("Can't find language by non-string values.");
+  if (typeof language !== "string") return null;
 
   return (
     languages.find(

@@ -4,7 +4,8 @@
   "description": "A translate package that combines multiple API's and packages.",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc && npx prettier --write ."
+    "build": "tsc && npx prettier --write .",
+    "dev": "nodemon test/main.js"
   },
   "repository": {
     "type": "git",
