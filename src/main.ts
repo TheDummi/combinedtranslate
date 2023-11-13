@@ -8,3 +8,5 @@ import detect from "./models/detect.js";
 import languages from "./tools/languages.js";
 
 export { morse, pigify, emojify, convert, translate, detect, languages };
+
+export default translate;

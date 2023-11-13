@@ -1,5 +1,15 @@
-src
+# * Node
 package-lock.json
+node_modules
+
+# ! env
+src
+test
+
+# git
 .gitignore
 .gitattributes
+
+# ? TypeScript
 tsconfig.json
+
