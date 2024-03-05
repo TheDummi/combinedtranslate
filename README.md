@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # CombinedTranslate \[BETA\]
 
 A package that has multiple translation API's and packages to return an assured response.
@@ -15,9 +17,9 @@ npm i combinedtranslate
 Using the package is very easy.
 
 ```js
-import translate from "combinedtranslate";
+import translate from 'combinedtranslate';
 
-const translation = await translate("Hallo Wereld", { to: "English" });
+const translation = await translate('Hallo Wereld', { to: 'English' });
 // Output: translation.content = 'Hello World'
 ```
 
@@ -65,11 +67,7 @@ const translation = await translate("Hallo Wereld", { to: "English" });
 ### Methods
 
 ```js
-import translate, {
-  languagesByCode,
-  languagesByName,
-  languageList,
-} from "combinedtranslate";
+import translate, { languagesByCode, languagesByName, languageList } from 'combinedtranslate';
 
 languagesByCode; // An object with all supported languages by their ISO code.
 
