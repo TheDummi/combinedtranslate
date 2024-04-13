@@ -1,3 +1,5 @@
+/** @format */
+
 export default [
   { code: "aa", name: "Afar", local: [], translate: false },
   { code: "ab", name: "Abkhazian", local: [], translate: false },
@@ -253,7 +255,7 @@ export default [
   { code: "uz_AF", name: "Uzbeki Afghanistan", local: [], translate: false },
   { code: "uwu", name: "UwU", local: [], translate: false },
   { code: "ve", name: "Venda", local: [], translate: false },
-  { code: "vi", name: "Vietcodese", local: [], translate: true },
+  { code: "vi", name: "Vietnamese", local: [], translate: true },
   { code: "vec", name: "Venetian", local: [], translate: false },
   { code: "vls", name: "West Flemish", local: [], translate: false },
   { code: "vo", name: "Volapük", local: [], translate: false },

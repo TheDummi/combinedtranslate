@@ -1,71 +1,71 @@
 {
-	"name": "combinedtranslate",
-	"version": "0.1.5",
-	"description": "A translate package that combines multiple API's and packages.",
-	"main": "dist/main.js",
-	"scripts": {
-		"build": "tsc && npx prettier --write .",
-		"dev": "nodemon test/main.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/TheDummi/combinedTranslate.git"
-	},
-	"keywords": [
-		"translate",
-		"free"
-	],
-	"author": "Dummi",
-	"type": "module",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/TheDummi/combinedTranslate/issues"
-	},
-	"homepage": "https://github.com/TheDummi/combinedTranslate#readme",
-	"dependencies": {
-		"@34r7h/google-translate-api": "*",
-		"@anmoti/translateapi": "*",
-		"@asmagin/google-translate-api": "*",
-		"@f97/google-translate-api": "*",
-		"@iamthes/google-translate": "*",
-		"@iamtraction/google-translate": "*",
-		"@imlinhanchao/google-translate-api": "*",
-		"@iuser/google-translate-api": "*",
-		"@leizl/google-translate-open-api": "*",
-		"@opentranslate/google": "*",
-		"@vitalets/google-translate-api": "*",
-		"@william5553/translate-google-api": "*",
-		"baidu-translate-api": "*",
-		"bing-translate-api": "*",
-		"chatgpt-translate": "*",
-		"convert-units": "*",
-		"fanyi-google": "*",
-		"google-translate-api-extend": "*",
-		"google-translate-api-extended": "*",
-		"google-translate-api-fix": "*",
-		"google-translate-api-next": "*",
-		"google-translate-api-plus": "*",
-		"google-translate-api-post": "*",
-		"google-translate-api-x": "*",
-		"google-translate-free": "*",
-		"google-translator": "*",
-		"googlecn": "*",
-		"granslate": "*",
-		"limitless-google-translate": "*",
-		"moji-translate": "*",
-		"morcedecoder": "*",
-		"open-translate": "*",
-		"pig-latin": "*",
-		"translate-emoji": "*",
-		"translation-google": "*",
-		"translatte": "^3.0.1",
-		"trgoogleapi": "*",
-		"tslib": "^2.6.2"
-	},
-	"devDependencies": {
-		"@types/convert-units": "^2.3.5",
-		"@types/google-translate-api": "^2.3.2",
-		"prettier": "^2.8.8",
-		"typescript": "^5.1.3"
-	}
+  "name": "combinedtranslate",
+  "version": "0.1.5",
+  "description": "A translate package that combines multiple API's and packages.",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc && npx prettier --write .",
+    "dev": "nodemon test/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDummi/combinedTranslate.git"
+  },
+  "keywords": [
+    "translate",
+    "free"
+  ],
+  "author": "Dummi",
+  "type": "module",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheDummi/combinedTranslate/issues"
+  },
+  "homepage": "https://github.com/TheDummi/combinedTranslate#readme",
+  "dependencies": {
+    "@34r7h/google-translate-api": "*",
+    "@anmoti/translateapi": "*",
+    "@asmagin/google-translate-api": "*",
+    "@f97/google-translate-api": "*",
+    "@iamthes/google-translate": "*",
+    "@iamtraction/google-translate": "*",
+    "@imlinhanchao/google-translate-api": "*",
+    "@iuser/google-translate-api": "*",
+    "@leizl/google-translate-open-api": "*",
+    "@opentranslate/google": "*",
+    "@vitalets/google-translate-api": "*",
+    "@william5553/translate-google-api": "*",
+    "baidu-translate-api": "*",
+    "bing-translate-api": "*",
+    "chatgpt-translate": "*",
+    "convert-units": "*",
+    "fanyi-google": "*",
+    "google-translate-api-extend": "*",
+    "google-translate-api-extended": "*",
+    "google-translate-api-fix": "*",
+    "google-translate-api-next": "*",
+    "google-translate-api-plus": "*",
+    "google-translate-api-post": "*",
+    "google-translate-api-x": "*",
+    "google-translate-free": "*",
+    "google-translator": "*",
+    "googlecn": "*",
+    "granslate": "*",
+    "limitless-google-translate": "*",
+    "moji-translate": "*",
+    "morcedecoder": "*",
+    "open-translate": "*",
+    "pig-latin": "*",
+    "translate-emoji": "*",
+    "translation-google": "*",
+    "translatte": "^3.0.1",
+    "trgoogleapi": "*",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/convert-units": "^2.3.5",
+    "@types/google-translate-api": "^2.3.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
 }

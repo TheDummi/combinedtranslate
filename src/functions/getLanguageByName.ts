@@ -1,6 +1,6 @@
 /** @format */
 
-import languages from '../tools/languages.js';
+import languages from "../tools/languages.js";
 
 /**
  * A function to get the language name by it's ISO code
@@ -8,7 +8,10 @@ import languages from '../tools/languages.js';
  * @returns language name
  */
 export default function getLanguageByName(language: string) {
-	if (typeof language !== 'string') return null;
+  if (typeof language !== "string") return null;
 
-	return languages.find((l) => l.name?.toLowerCase() === language.toLowerCase()) || null;
+  return (
+    languages.find((l) => l.name?.toLowerCase() === language.toLowerCase()) ||
+    null
+  );
 }
