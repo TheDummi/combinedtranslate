@@ -9,6 +9,7 @@ import detect from "./models/detect.js";
 import getLanguageByCode from "./functions/getLanguageByCode.js";
 import getLanguageByName from "./functions/getLanguageByName.js";
 import getLanguage from "./functions/getLanguage.js";
+import translateable from "./functions/translateable.js";
 
 import languages from "./tools/languages.js";
 
@@ -23,6 +24,7 @@ export {
   getLanguageByCode,
   getLanguageByName,
   getLanguage,
+  translateable,
 };
 
 export default translate;
